@@ -88,23 +88,102 @@
 // k=k+1;
 // console.log(k);
 
-//chapter21
+//chapter21 truthy$falsy
 // 5 falsy value- 0,"",undefined,null,NaN
-console.log(Boolean(null));
-console.log(Boolean(0));
-console.log(Boolean(""));
+// console.log(Boolean(null));
+// console.log(Boolean(0));
+// console.log(Boolean(""));
 
-if(0){
-    console.log("fail");
+// if(0){
+//     console.log("fail");
+// }
+// else{
+//     console.log("pass");
+// }
+
+// let x;
+// if(x){
+//     console.log("variable is defined");
+// }
+// else{
+//     console.log("variable is undefined");
+// }
+// chapter22 equality operator
+// const yashu=21;
+// if(yashu===21)
+// {console.log(`today is yashu's birthday`);}
+
+// if(yashu=="21")console.log("yashu is my daughter");
+
+// const date=prompt("what's your birth date");
+// // type of above number will be string
+// console.log(`birthdate= ${date}`);
+// if(date===21)
+// {console.log('it is your birthday');}
+// else{console.log('it is not your birthday');}
+
+// // (!== means not equal    != means equal)
+// if(date!==21)console.log("it is an another day");
+// if(date!=21)console.log("it is an amazing day");
+// console.log(typeof date);
+
+//chapter 23$24 boolean logic
+// const fresh = true;
+// const healthy = false;
+// console.log(fresh && healthy);
+// const food = fresh && healthy;
+// if (food) {
+//   console.log("food is eatable");
+// } else {
+//   console.log("food not eatable");
+// }
+
+// const eatable = !fresh || healthy;
+// if (eatable) {
+//     console.log("food is eatable");
+//   } else {
+//     console.log("food not eatable");
+//   }
+
+//   const homemade=true;
+//   console.log(fresh&&healthy&&homemade);
+//   console.log(fresh||healthy||homemade);
+//   console.log(fresh&&healthy||homemade);
+
+//chapter26 switch
+
+// const date = 1;
+// switch (date) {
+//   case 1:        //date===1
+//     console.log("it is a day 1");
+//     // break;
+//   case 2:
+//     console.log("it is day 2");
+//     break;
+//   case 3:
+//     console.log("it's a day 3");
+//     break;
+//   case 4:
+//     console.log("it's a day 4");
+//     break;
+//   case 5:
+//     console.log("it's a day 5");
+//     break;
+//   default:
+//     console.log("not a valid day");
+// }
+
+// chapter28 ternary operator
+const age=prompt('what is your age');
+(age>=18)?console.log("valid to get driving license"):console.log("have to wait till 18");
+
+if(age>=18){
+  console.log("valid to get driving license");
 }
 else{
-    console.log("pass");
+  console.log("have to wait till 18");
 }
 
-let x;
-if(x){
-    console.log("variable is defined");
-}
-else{
-    console.log("variable is undefined");
-}
+
+
+
