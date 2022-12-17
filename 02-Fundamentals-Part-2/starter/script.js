@@ -81,3 +81,23 @@ const age=(birthyear)=>2022-birthyear;
 const year=[1970,1972,1993,1996,1999,2001];
 const currentAge=age(year[3]);
 console.log(currentAge);
+
+// chapter 40 array operators(methods)
+// push& unshift 
+const newFamily=family.push('bhoomi');
+console.log(newFamily);
+console.log(family);
+console.log(family.length);
+
+family.unshift('yug');
+console.log(family);
+// pop& shift
+family.pop();
+console.log(family);
+family.shift();
+console.log(family);
+family[0]="naresh";
+console.log(family);
+
+console.log(family.indexOf('naresh'));
+console.log(family.includes('Naresh'));

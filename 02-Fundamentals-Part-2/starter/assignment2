@@ -1,9 +1,9 @@
 // "use strict";
+// challenge1 part2
 // const calcAvg = (scoreOne, scoreTwo, scoreThree) =>
 //   (scoreOne + scoreTwo + scoreThree) / 3;
 //   const avgD = calcAvg(85,54,41);
 //   const avgK = calcAvg(23,34,27);
-
 
 // const checkWinner = function (dolphin,koelas) {
 //     if (dolphin >= 2 * koelas) {
@@ -15,3 +15,25 @@
 //   }
 // };
 // checkWinner(avgD,avgK);
+
+// challenge 2
+"use strict";
+function calctip(bill) {
+  const tip = bill >= 50 && bill <= 300 ? 0.15 * bill : 0.2 * bill;
+  return tip;
+}
+const tip= calctip(100);
+console.log(tip);
+const bills = [125, 555, 44];
+const tipArray=[];
+tipArray[0]=calctip(bills[0]);
+tipArray[1]=calctip(bills[1]);
+tipArray[2]=calctip(bills[2]);
+const total=[];
+total[0]=bills[0]+tipArray[0];
+total[1]=bills[1]+tipArray[1];
+total[2]=bills[2]+tipArray[2];
+console.log(tipArray);
+console.log(total);
+
+
