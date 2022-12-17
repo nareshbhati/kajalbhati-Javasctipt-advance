@@ -43,14 +43,41 @@
 // console.log(`${numberYears} years of gap after graduation`);
 
 // chapter35 arrow function
-"use strict";
-const kajalAge = (birthyear) => 2022 - birthyear;
-console.log(kajalAge(1996));
+// "use strict";
+// const kajalAge = (birthyear) => 2022 - birthyear;
+// console.log(kajalAge(1996));
 
-const gap=(currentYear,passingYear)=>{
-  const gapyear=currentYear-passingYear;
-  console.log(`there are ${gapyear} years of gap`);
-  return gapyear;
-}
+// const gap=(currentYear,passingYear)=>{
+//   const gapyear=currentYear-passingYear;
+//   console.log(`there are ${gapyear} years of gap`);
+//   return gapyear;
+// }
 
-console.log(gap(2022,2017));
+// console.log(gap(2022,2017));
+
+// chapter36 function calling function
+// "use strict";
+// const cutFruit=(fruit)=>4*fruit;
+// function fruitjuice(apple, banana) {
+//   const cutApples=cutFruit(apple);
+//   const cutBananas=cutFruit(banana);
+//   const juice = `juice with ${cutApples} pieces of apples and ${cutBananas} pieces of bananas`;
+//   return juice;
+// }
+// const juiceA = fruitjuice(5, 9);
+// console.log(juiceA);
+
+// chapter 39 Array
+const family=['naresh','kajal','yashvi'];
+console.log(family[1]);
+console.log(family);
+console.log(family.length);
+console.log(family[family.length-1]);
+
+family[0]='husband';
+console.log(family[0]);
+ 
+const age=(birthyear)=>2022-birthyear;
+const year=[1970,1972,1993,1996,1999,2001];
+const currentAge=age(year[3]);
+console.log(currentAge);

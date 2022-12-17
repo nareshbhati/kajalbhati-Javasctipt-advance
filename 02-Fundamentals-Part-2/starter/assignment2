@@ -1,0 +1,17 @@
+// "use strict";
+// const calcAvg = (scoreOne, scoreTwo, scoreThree) =>
+//   (scoreOne + scoreTwo + scoreThree) / 3;
+//   const avgD = calcAvg(85,54,41);
+//   const avgK = calcAvg(23,34,27);
+
+
+// const checkWinner = function (dolphin,koelas) {
+//     if (dolphin >= 2 * koelas) {
+//     console.log("dolphin is winner");
+//   } else if (koelas >= 2 * dolphin) {
+//     console.log("koela's are winner");
+//   } else {
+//     console.log("no team wins the match");
+//   }
+// };
+// checkWinner(avgD,avgK);
