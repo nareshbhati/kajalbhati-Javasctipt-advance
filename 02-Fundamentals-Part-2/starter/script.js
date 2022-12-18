@@ -68,36 +68,71 @@
 // console.log(juiceA);
 
 // chapter 39 Array
-const family=['naresh','kajal','yashvi'];
-console.log(family[1]);
-console.log(family);
-console.log(family.length);
-console.log(family[family.length-1]);
+// const family=['naresh','kajal','yashvi'];
+// console.log(family[1]);
+// console.log(family);
+// console.log(family.length);
+// console.log(family[family.length-1]);
 
-family[0]='husband';
-console.log(family[0]);
+// family[0]='husband';
+// console.log(family[0]);
  
-const age=(birthyear)=>2022-birthyear;
-const year=[1970,1972,1993,1996,1999,2001];
-const currentAge=age(year[3]);
-console.log(currentAge);
+// const age=(birthyear)=>2022-birthyear;
+// const year=[1970,1972,1993,1996,1999,2001];
+// const currentAge=age(year[3]);
+// console.log(currentAge);
 
-// chapter 40 array operators(methods)
-// push& unshift 
-const newFamily=family.push('bhoomi');
-console.log(newFamily);
-console.log(family);
-console.log(family.length);
+// // chapter 40 array operators(methods)
+// // push& unshift 
+// const newFamily=family.push('bhoomi');
+// console.log(newFamily);
+// console.log(family);
+// console.log(family.length);
 
-family.unshift('yug');
-console.log(family);
-// pop& shift
-family.pop();
-console.log(family);
-family.shift();
-console.log(family);
-family[0]="naresh";
-console.log(family);
+// family.unshift('yug');
+// console.log(family);
+// // pop& shift
+// family.pop();
+// console.log(family);
+// family.shift();
+// console.log(family);
+// family[0]="naresh";
+// console.log(family);
 
-console.log(family.indexOf('naresh'));
-console.log(family.includes('Naresh'));
+// console.log(family.indexOf('naresh'));
+// console.log(family.includes('Naresh'));
+// console.log(typeof []);
+// console.log(typeof []);
+
+//chapter 42 object
+// 'use strict';
+// const familyObject={
+//     husband:'naresh',
+//     wife:'kajal',
+//     child:'yashvi',
+//     birthyear:[1992,1996,2020]
+// };
+// console.log(familyObject);
+
+// const kajal={
+//     firstName:'kajal',
+//     lastName:'bhati',
+//     birthyear: 1996,
+//     family:["Naresh","yashvi","kajal"]
+// };
+// console.log(kajal.family);
+// console.log(kajal['firstName']);
+// console.log(kajal['birthyear']);
+// const newName='Name';
+// console.log(kajal['first'+newName]);
+// kajal.location='mumbai';
+// console.log(kajal);
+// kajal['location']='delhi';
+// console.log(kajal);
+
+
+// const toKnow=prompt('what do you wanna know about kajal?');
+// console.log(toKnow);
+// console.log(kajal.toKnow);
+// console.log(kajal[toKnow]);
+
