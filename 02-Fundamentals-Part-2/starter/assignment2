@@ -37,15 +37,61 @@
 // console.log(total);
 
 // challenge(object)
-const kajal = {
-  firstName: "kajal",
-  lastName: "bhati",
-  birthyear: 1996,
-  family: ["Naresh", "yashvi", "kajal"],
+// const kajal = {
+//   firstName: "kajal",
+//   lastName: "bhati",
+//   birthyear: 1996,
+//   family: ["Naresh", "yashvi", "kajal"],
+//   hasDriverLicence:true
+// };
+// console.log(
+//   `${kajal.firstName} has ${kajal["family"].length}  members in her family and ${kajal["family"][0]} is her husband`
+// );
+// console.log(
+//   `${kajal.firstName} has ${kajal.family.length}  members in her family and ${kajal.family[0]} is her husband`
+// );
+
+// challenge 3
+"use strict";
+const mark = {
+  firstName: "Mark",
+  lastName: "Miller",
+  // fullName:'maek miller',
+  weight: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.markBMI = this.weight / this.height ** 2;
+    return this.markBMI;
+  },
+  result: function () {
+    console.log(
+      `${this.firstName} ${this.lastName} has higner BMI ${this.markBMI} than`
+    );
+  },
 };
+const john = {
+  firstName: "John",
+  lastName: "Smith",
+  // fullName:'john smith',
+  weight: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.johnBMI = this.weight / this.height ** 2;
+    return this.johnBMI;
+  },
+  result: function () {
+    console.log(
+      `${this.firstName} ${this.lastName} has higner BMI ${this.johnBMI} than`
+    );
+  },
+};
+mark.calcBMI();
+john.calcBMI();
+console.log(mark.markBMI, john.johnBMI);
 console.log(
-  `${kajal.firstName} has ${kajal["family"].length}  members in her family and ${kajal["family"][0]} is her husband`
-);
-console.log(
-  `${kajal.firstName} has ${kajal.family.length}  members in her family and ${kajal.family[0]} is her husband`
+  `${
+    mark.calcBMI() > john.calcBMI()
+      ? `${mark.result()}  ${john.firstName} ${john.johnBMI}`
+      : `${john.result()} ${mark.firstName} ${mark.markBMI}`
+  }`
 );

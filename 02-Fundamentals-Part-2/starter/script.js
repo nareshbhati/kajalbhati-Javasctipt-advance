@@ -76,14 +76,14 @@
 
 // family[0]='husband';
 // console.log(family[0]);
- 
+
 // const age=(birthyear)=>2022-birthyear;
 // const year=[1970,1972,1993,1996,1999,2001];
 // const currentAge=age(year[3]);
 // console.log(currentAge);
 
 // // chapter 40 array operators(methods)
-// // push& unshift 
+// // push& unshift
 // const newFamily=family.push('bhoomi');
 // console.log(newFamily);
 // console.log(family);
@@ -130,9 +130,89 @@
 // kajal['location']='delhi';
 // console.log(kajal);
 
-
 // const toKnow=prompt('what do you wanna know about kajal?');
 // console.log(toKnow);
 // console.log(kajal.toKnow);
 // console.log(kajal[toKnow]);
 
+// object method chapter 44
+// const kajal = {
+//   firstName: "kajal",
+//   lastName: "bhati",
+//   birthyear: 1996,
+//   family: ["Naresh", "yashvi", "kajal"],
+//   hasDriverLicence:true,
+
+//   // calcAge: function(birthyear){
+//   //     const age=2022-birthyear;
+//   //     return age;
+//   // }
+//   calcAge: function () {
+//     // console.log(this);
+//     this.age = 2022 - this.birthyear;
+//     return this.age;
+//   }
+// };
+// console.log(kajal.calcAge());
+// console.log(kajal);
+// console.log(kajal['calcAge']());
+// console.log(kajal.family[1]);
+// kajal.age = 21;
+// console.log(kajal);
+// kajal["age"] = 30;
+// console.log(kajal["age"]);
+
+// challenge object
+// console.log(
+//    ` ${kajal.firstName} is ${kajal.calcAge()} years old and ${(kajal.hasDriverLicence)?'has drivers licence':'has no drivers licence'}`
+// );
+
+// chapter 46 Iteration(for loop)
+// for loop keeps running while condition is true(used to write dry code)
+// for (let round = 1; round <= 15; round++) {
+//   console.log(`kajal has completed ${round} round on morning walk`);
+// }
+
+// chapter 47(looping array)
+// "use strict";
+// const kajal = ["kajal", "bhati", 1996, "mumbai", ["naresh", "kajal", "yashvi"]];
+// console.log(kajal);
+// const types = [];
+// for (let i = 0; i < kajal.length; i++) {
+//   console.log(kajal[i]);
+//   // types[i] = typeof kajal[i];
+//   types.push(typeof kajal[i]);
+// }
+// console.log(types);
+
+// continue and break the iteration
+// console.log("-------only string--------");
+const kajal = ["kajal", "bhati", 1996, "mumbai", ["naresh", "kajal", "yashvi"]];
+// for (let j = 0; j < kajal.length; j++) {
+//   if (typeof kajal[j] !== "string") continue;
+//   console.log(kajal[j], typeof kajal[j]);
+// }
+
+// console.log("----break--------");
+
+// for (let j = 0; j < kajal.length; j++) {
+//   if (typeof kajal[j] === "number") break;
+//   console.log(kajal[j], typeof kajal[j]);
+// }
+
+// chapter 48 backward looping
+
+// console.log("----backward iteration----");
+// for (let j = kajal.length - 1; j >= 0; j--) {
+//   console.log(kajal[j], typeof kajal[j]);
+//   kajal.push("sheoganj");
+//   console.log(kajal);
+// }
+
+//   loop in loop
+for (let i = 1; i <= 5; i++) {
+  console.log(`exercise number ${i}`);
+  for (let j = 1; j < 4; j++) {
+    console.log(`weight lifting for exercise ${i}`);
+  }
+}
