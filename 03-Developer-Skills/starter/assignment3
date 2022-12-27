@@ -1,0 +1,16 @@
+const tempOne = [17, 21, 23];
+const tempTwo = [12, 5, -5, 0, 4];
+const printForecast = function (array) {
+  //   console.log(
+  //     `...${array[0]}'c in 1 days...${array[1]}'c in 2 days...${array[2]}'c in 3 days...`
+  //   );
+  let newStr = "";
+  for (i = 0; i < array.length; i++) {
+    newStr += `...${array[i]}'c in ${i + 1} days`;
+  }
+  return newStr;
+};
+const result = printForecast(tempOne);
+console.log(result);
+const resultTwo = printForecast(tempTwo);
+console.log(resultTwo);

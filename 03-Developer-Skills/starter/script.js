@@ -5,11 +5,10 @@ const num = 56;
 console.log(num);
 
 console.log("hiee!");
-
 // const temp = [3, 2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
 const tempOne = [3, 2, -6, -1, "error"];
 const tempTwo = [9, 13, 17, 15, 14, 9, 5];
-const temp = tempOne.concat(tempTwo);
+const temp = tempOne.concat(tempTwo); // [...tem1,...tem2git]
 console.log(temp);
 const calcTemp = function (temp) {
   let max = temp[0];
