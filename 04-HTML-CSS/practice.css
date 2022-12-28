@@ -1,0 +1,25 @@
+.image {
+  height: 200px;
+  width: 200px;
+}
+* {
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: rgb(160, 145, 245);
+}
+h4 {
+  color: rgb(104, 25, 25);
+}
+#your-name {
+  border: 5px solid black;
+  width: 500px;
+  background-color: burlywood;
+  text-align: center;
+}
+input,
+button {
+  color: greenyellow;
+}
+h2 {
+  margin-left: 10px;
+}
