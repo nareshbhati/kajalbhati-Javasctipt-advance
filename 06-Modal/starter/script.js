@@ -17,3 +17,13 @@ for (let i = 0; i < showModal.length; i++) {
 // close modal
 closeModal.addEventListener('click', closedModal);
 overlay.addEventListener('click', closedModal);
+
+//keypress
+document.addEventListener('keydown', function (event) {
+  // modal.classList.add('hidden');
+  // overlay.classList.add('hidden');
+  console.log(event.key);
+  // console.log('key pressed');
+  if (event.key === 'Escape' && !modal.classList.contains('hidden'))
+    closedModal();
+});
