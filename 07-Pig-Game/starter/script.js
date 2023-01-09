@@ -69,11 +69,10 @@ newGame.addEventListener('click', function () {
   playing = true;
   score1E.textContent = 0;
   score2E.textContent = 0;
-  document
-    .querySelector(`.player--${activePlayer}`)
-    .classList.remove('player--winner');
-  document
-    .querySelector(`.player--${activePlayer}`)
-    .classList.toggle('player--active');
-  switchPlayer();
+  current1E.textContent = 0;
+  current2E.textContent = 0;
+  player1E.classList.add('player--active');
+  player2E.classList.remove('player--active');
+  document.querySelector('.player--0').classList.remove('player--winner');
+  document.querySelector('.player--1').classList.remove('player--winner');
 });
