@@ -58,42 +58,79 @@
 // console.log(window.y === y);
 
 // this keyword
-console.log(this);
+// console.log(this);
 
-const agefunc = function (birthYear) {
-  const age = 2022 - birthYear;
-  console.log(this);
-  // this keyword shows undefined in strict mode and global window in regular mode
-  return age;
-};
-agefunc();
+// const agefunc = function (birthYear) {
+//   const age = 2022 - birthYear;
+//   console.log(this);
+//   // this keyword shows undefined in strict mode and global window in regular mode
+//   return age;
+// };
+// agefunc();
+// // arrow function doesn't get its own this keyword ,it always points to parent scope
+// const kajalAge = birthYear => {
+//   console.log(2022 - birthYear);
+//   console.log(this);
+// };
+// kajalAge(1996);
 
-const kajalAge = birthYear => {
-  console.log(2022 - birthYear);
-  console.log(this);
-};
-kajalAge(1996);
+// const kajal = {
+//   firstName: 'kajal',
+//   year: 1996,
+//   calcAge: function () {
+//     const age = 2022 - this.year;
+//     console.log(this);
+//     console.log(age);
+//     return age;
+//   },
+// };
+// kajal.calcAge();
 
-const kajal = {
+// const naresh = {
+//   year: 1992,
+// };
+// // method borrowing
+// naresh.calcAge = kajal.calcAge;
+// // this always points to object for which function is calling
+// naresh.calcAge();
+
+// const newFunc = kajal.calcAge;
+// // here 'newFunc' behave like just a regular function so in strict mode this keyword points to undefine
+// newFunc();
+
+// regular v/s arrow function
+
+// var firstName = 'Bhati';
+
+const kajalDetails = {
   firstName: 'kajal',
-  year: 1996,
+  birthYear: 1996,
   calcAge: function () {
-    const age = 2022 - this.year;
-    console.log(this);
-    console.log(age);
-    return age;
+    const age = 2023 - this.birthYear;
+    console.log(age, this);
+    // return age;
+    const inner = () => {
+      // console.log(`hey i did it ${this.firstName}`);
+      console.log(this);
+    };
+    inner();
+    // instead of using arrow func if we use regular function then this pointer shows undefine
+    // solution2
+    const x = this;
+    const secondInner = function () {
+      console.log(`hey i am ${x.birthYear} born`);
+    };
+    secondInner();
   },
+  intro: () =>
+    console.log(`hello i am ${this.firstName} and ${this.calcAge} years old`),
 };
-kajal.calcAge();
+kajalDetails.calcAge();
+kajalDetails.intro();
 
-const naresh = {
-  year: 1992,
+// arguement parameter
+const kajal = function (a, b) {
+  return a + b;
 };
-// method borrowing
-naresh.calcAge = kajal.calcAge;
-// this always points to object for which function is calling
-naresh.calcAge();
-
-const newFunc = kajal.calcAge;
-// here 'newFunc' behave like just a regular function so in strict mode this keyword points to undefine
-newFunc();
+kajal(2, 5);
+kajal(2, 5, 6, 9);
