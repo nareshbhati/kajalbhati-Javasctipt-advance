@@ -102,35 +102,69 @@
 
 // var firstName = 'Bhati';
 
-const kajalDetails = {
-  firstName: 'kajal',
-  birthYear: 1996,
-  calcAge: function () {
-    const age = 2023 - this.birthYear;
-    console.log(age, this);
-    // return age;
-    const inner = () => {
-      // console.log(`hey i did it ${this.firstName}`);
-      console.log(this);
-    };
-    inner();
-    // instead of using arrow func if we use regular function then this pointer shows undefine
-    // solution2
-    const x = this;
-    const secondInner = function () {
-      console.log(`hey i am ${x.birthYear} born`);
-    };
-    secondInner();
-  },
-  intro: () =>
-    console.log(`hello i am ${this.firstName} and ${this.calcAge} years old`),
-};
-kajalDetails.calcAge();
-kajalDetails.intro();
+// const kajalDetails = {
+//   firstName: 'kajal',
+//   birthYear: 1996,
+//   calcAge: function () {
+//     const age = 2023 - this.birthYear;
+//     console.log(age, this);
+//     // return age;
+//     const inner = () => {
+//       // console.log(`hey i did it ${this.firstName}`);
+//       console.log(this);
+//     };
+//     inner();
+//     // instead of using arrow func if we use regular function then this pointer shows undefine
+//     // solution2
+//     const x = this;
+//     const secondInner = function () {
+//       console.log(`hey i am ${x.birthYear} born`);
+//     };
+//     secondInner();
+//   },
+//   intro: () =>
+//     console.log(`hello i am ${this.firstName} and ${this.calcAge} years old`),
+// };
+// kajalDetails.calcAge();
+// kajalDetails.intro();
 
-// arguement parameter
-const kajal = function (a, b) {
-  return a + b;
+// // arguement parameter
+// const kajal = function (a, b) {
+//   return a + b;
+// };
+// kajal(2, 5);
+// kajal(2, 5, 6, 9);
+
+// primitive and reference type
+// primitives
+let lastName = 'borana';
+let oldLastName = lastName;
+lastName = 'bhati';
+console.log(oldLastName, lastName);
+
+const me = {
+  firstName: 'kajal',
+  lastName: 'borana',
 };
-kajal(2, 5);
-kajal(2, 5, 6, 9);
+// const marriedKajal = me;
+// marriedKajal.lastName = 'bhati';
+// console.log(me);
+// console.log(marriedKajal);
+
+// copyobject object.assign() creat a complete new object with all properties copying(only works at firstlevel and only creat shallow copy)
+const meCopy = Object.assign({}, me);
+meCopy.lastName = 'bhati';
+console.log(me);
+console.log(meCopy);
+
+// deep copy
+const kajal = {
+  firstName: 'kajal',
+  lastName: 'borana',
+  family: ['naresh', 'kajal'],
+};
+const kajalCopy = Object.assign({}, kajal);
+kajalCopy.lastName = 'bhati';
+kajalCopy.family.push('yashvi');
+console.log(kajal);
+console.log(kajalCopy);
