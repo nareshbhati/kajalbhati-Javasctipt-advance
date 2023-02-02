@@ -14,6 +14,10 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(`order received! at ${time} to ${address} of ${this.mainMenu[mainIndex]} and ${this.starterMenu[starterIndex]}
+    `);
+  },
 
   openingHours: {
     thu: {
@@ -30,7 +34,12 @@ const restaurant = {
     },
   },
 };
-
+restaurant.orderDelivery({
+  time: 22.3,
+  mainIndex: 2,
+  starterIndex: 2,
+  address: '60 feet road',
+});
 // destructuring of an array
 
 const arr = [2, 3, 4];
@@ -95,3 +104,10 @@ let f = 222;
 const obj = { e: 21, f: 23, g: 25 };
 ({ e, f } = obj);
 console.log(e, f);
+
+// nested object
+const {
+  fri: { open: O, close: C },
+} = openingHours;
+// console.log(open, close);
+console.log(O, C);
