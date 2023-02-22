@@ -18,6 +18,9 @@ const restaurant = {
     console.log(`order received! at ${time} to ${address} of ${this.mainMenu[mainIndex]} and ${this.starterMenu[starterIndex]}
     `);
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`delicious pasta with ${ing1} ${ing2} ${ing3}`);
+  },
 
   openingHours: {
     thu: {
@@ -42,72 +45,184 @@ restaurant.orderDelivery({
 });
 // destructuring of an array
 
-const arr = [2, 3, 4];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+// const arr = [2, 3, 4];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
 
-const [x, y, z] = arr;
-console.log(x, y, z);
-console.log(arr);
+// const [x, y, z] = arr;
+// console.log(x, y, z);
+// console.log(arr);
 
-// const [first, second] = restaurant.categories;
-// console.log(first, second);
-// can skip an element of array by using a hole or space
-let [first, , second] = restaurant.categories;
-console.log(first, second);
-
-// switching of variable value
-// const temp = first;
-// first = second;
-// second = temp;
+// // const [first, second] = restaurant.categories;
+// // console.log(first, second);
+// // can skip an element of array by using a hole or space
+// let [first, , second] = restaurant.categories;
 // console.log(first, second);
 
-[first, second] = [second, first];
-console.log(first, second);
+// // switching of variable value
+// // const temp = first;
+// // first = second;
+// // second = temp;
+// // console.log(first, second);
 
-console.log(restaurant.order(2, 0));
-const [starter, mainCourse] = restaurant.order(2, 0);
-console.log(starter, mainCourse);
+// [first, second] = [second, first];
+// console.log(first, second);
 
-// nested array
-const nested = [2, 3, [4, 5]];
-const [i, j] = nested;
-console.log(i, j);
-const [p, , q] = nested;
-console.log(p, q);
-const [r, , [s, t]] = nested;
-console.log(r, s, t);
+// console.log(restaurant.order(2, 0));
+// const [starter, mainCourse] = restaurant.order(2, 0);
+// console.log(starter, mainCourse);
 
-// default values ,here value of 'o' has been set 1 as default value
-const [m = 1, n = 1, o = 1] = [7, 8];
-console.log(m, n, o);
+// // nested array
+// const nested = [2, 3, [4, 5]];
+// const [i, j] = nested;
+// console.log(i, j);
+// const [p, , q] = nested;
+// console.log(p, q);
+// const [r, , [s, t]] = nested;
+// console.log(r, s, t);
 
-// destructuring of an object ,order of properties are not mandantory
-const { name, openingHours, categories } = restaurant;
-console.log(name, categories);
+// // default values ,here value of 'o' has been set 1 as default value
+// const [m = 1, n = 1, o = 1] = [7, 8];
+// console.log(m, n, o);
 
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(hours, tags);
+// // destructuring of an object ,order of properties are not mandantory
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, categories);
 
-// default falues to property
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+// console.log(hours, tags);
 
-// switchins or mutating values
-let e = 111;
-let f = 222;
-const obj = { e: 21, f: 23, g: 25 };
-({ e, f } = obj);
-console.log(e, f);
+// // default falues to property
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
 
-// nested object
-const {
-  fri: { open: O, close: C },
-} = openingHours;
-// console.log(open, close);
-console.log(O, C);
+// // switchins or mutating values
+// let e = 111;
+// let f = 222;
+// const obj = { e: 21, f: 23, g: 25 };
+// ({ e, f } = obj);
+// console.log(e, f);
+
+// // nested object
+// const {
+//   fri: { open: O, close: C },
+// } = openingHours;
+// // console.log(open, close);
+// console.log(O, C);
+
+// // spread operator
+
+// const arry = [1, 2, 3];
+// const newArry = [1, 2, ...arry];
+// console.log(newArry);
+// console.log(...newArry);
+
+// const newmainMenu = [...restaurant.mainMenu, 'pavbhaji'];
+// console.log(newmainMenu);
+
+// const newMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(newMenu);
+
+// const str = 'kajal';
+// const newcorner = [...str, '', 'B'];
+// console.log(newcorner);
+// console.log(...str);
+
+// // console.log(`${...str} Borana`);   not allowed
+
+// // const ingredients = [
+// //   prompt("let's make pasta! ingredient 1"),
+// //   prompt('ingredient2'),
+// //   prompt('ingredient3'),
+// // ];
+// // restaurant.orderPasta(...ingredients);
+
+// const newRestaurant = { ...restaurant, city: 'mumbai' };
+// console.log(newRestaurant);
+// console.log(restaurant);
+
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'the mumbai cafe';
+// console.log(restaurantCopy);
+
+// rest operator opposite of spread operator
+
+const [a, b, ...c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c);
+
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+const [Pizza, , Risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(otherFood);
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 9);
+
+const k = [4, 8, 6, 9, 2, 3, 1, 7];
+add(...k);
+
+// SHORT CIRCUITING || AND && OPERATOR
+
+console.log('' || 'jonas');
+console.log(5 || 'jonas');
+console.log(0 || 8);
+console.log('' || 0);
+console.log(undefined || 0 || '' || false || 'hiee' || 45 || true);
+// restaurant.numGuest = 0;
+const guest1 = restaurant.numGuest ? restaurant.numGuest : 10;
+console.log(guest1);
+// const guest2 = restaurant.numGuest || 50;
+// console.log(guest2);
+
+console.log('kajal' && 0);
+console.log('1' && 'yashu');
+
+if (restaurant.orderPasta) {
+  restaurant.orderPasta('capsicum', 'spinach');
+}
+
+restaurant.orderPasta && restaurant.orderPasta('capsicum', 'spinach');
+
+// nullish coalescing operator(in this 0 or undefined is also considered as truthy value)
+// restaurant.numGuest = 0;
+const guest2 = restaurant.numGuest ?? 50;
+console.log(guest2);
+
+// logical operator
+const data1 = {
+  name: 'kajal',
+  value: 21,
+};
+const data2 = {
+  name: 'yashvi',
+  DOB: 21,
+};
+// data1.value = data1.value || 10;
+// data2.value ||= 19;
+// console.log(data1, data2);
+
+data2.value = data2.value ?? 10;
+data2.value ??= 10;
+// console.log(data1, data2);
+
+// data1.DOB = data1.DOB && 15;
+data2.DOB = data2.DOB && 17;
+// console.log(data1, data2);
+
+data1.DOB &&= 15;
+console.log(data1, data2);
