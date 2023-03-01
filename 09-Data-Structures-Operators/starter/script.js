@@ -37,12 +37,12 @@ const restaurant = {
     },
   },
 };
-restaurant.orderDelivery({
-  time: 22.3,
-  mainIndex: 2,
-  starterIndex: 2,
-  address: '60 feet road',
-});
+// restaurant.orderDelivery({
+//   time: 22.3,
+//   mainIndex: 2,
+//   starterIndex: 2,
+//   address: '60 feet road',
+// });
 // destructuring of an array
 
 // const arr = [2, 3, 4];
@@ -152,77 +152,153 @@ restaurant.orderDelivery({
 
 // rest operator opposite of spread operator
 
-const [a, b, ...c] = [1, 2, 3, 4, 5, 6];
-console.log(a, b, c);
+// const [a, b, ...c] = [1, 2, 3, 4, 5, 6];
+// console.log(a, b, c);
 
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(sat, weekdays);
-const [Pizza, , Risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(otherFood);
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(sat, weekdays);
+// const [Pizza, , Risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(otherFood);
 
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
 
-  console.log(sum);
-};
+//   console.log(sum);
+// };
 
-add(2, 3);
-add(5, 3, 7, 9);
+// add(2, 3);
+// add(5, 3, 7, 9);
 
-const k = [4, 8, 6, 9, 2, 3, 1, 7];
-add(...k);
+// const k = [4, 8, 6, 9, 2, 3, 1, 7];
+// add(...k);
 
 // SHORT CIRCUITING || AND && OPERATOR
 
-console.log('' || 'jonas');
-console.log(5 || 'jonas');
-console.log(0 || 8);
-console.log('' || 0);
-console.log(undefined || 0 || '' || false || 'hiee' || 45 || true);
-// restaurant.numGuest = 0;
-const guest1 = restaurant.numGuest ? restaurant.numGuest : 10;
-console.log(guest1);
-// const guest2 = restaurant.numGuest || 50;
+// console.log('' || 'jonas');
+// console.log(5 || 'jonas');
+// console.log(0 || 8);
+// console.log('' || 0);
+// console.log(undefined || 0 || '' || false || 'hiee' || 45 || true);
+// // restaurant.numGuest = 0;
+// const guest1 = restaurant.numGuest ? restaurant.numGuest : 10;
+// console.log(guest1);
+// // const guest2 = restaurant.numGuest || 50;
+// // console.log(guest2);
+
+// console.log('kajal' && 0);
+// console.log('1' && 'yashu');
+
+// if (restaurant.orderPasta) {
+//   restaurant.orderPasta('capsicum', 'spinach');
+// }
+
+// restaurant.orderPasta && restaurant.orderPasta('capsicum', 'spinach');
+
+// // nullish coalescing operator(in this 0 or undefined is also considered as truthy value)
+// // restaurant.numGuest = 0;
+// const guest2 = restaurant.numGuest ?? 50;
 // console.log(guest2);
 
-console.log('kajal' && 0);
-console.log('1' && 'yashu');
+// // logical operator
+// const data1 = {
+//   name: 'kajal',
+//   value: 21,
+// };
+// const data2 = {
+//   name: 'yashvi',
+//   DOB: 21,
+// };
+// // data1.value = data1.value || 10;
+// // data2.value ||= 19;
+// // console.log(data1, data2);
 
-if (restaurant.orderPasta) {
-  restaurant.orderPasta('capsicum', 'spinach');
+// data2.value = data2.value ?? 10;
+// data2.value ??= 10;
+// // console.log(data1, data2);
+
+// // data1.DOB = data1.DOB && 15;
+// data2.DOB = data2.DOB && 17;
+// console.log(data1, data2);
+
+// data1.DOB &&= 15;
+// console.log(data1, data2);
+
+// for-of loop
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menu);
+// for (const item of menu) console.log(item);
+// // for (const item of menu.entries()) console.log(item);
+// // console.log(...menu.entries());
+// for (const [i, el] of menu.entries()) console.log(`${i + 1}:${el}`);
+
+//Enhanced object literals
+//   const openingHours={
+//   thu: {
+//     open: 12,
+//     close: 22,
+//   },
+//   fri: {
+//     open: 11,
+//     close: 23,
+//   },
+//   sat: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// }
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+//   order: function (starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+//   // function enhancement
+//   orderDelivery({ starterIndex, mainIndex, time, address }) {
+//     console.log(`order received! at ${time} to ${address} of ${this.mainMenu[mainIndex]} and ${this.starterMenu[starterIndex]}
+//     `);
+//   },
+//   orderPasta: function (ing1, ing2, ing3) {
+//     console.log(`delicious pasta with ${ing1} ${ing2} ${ing3}`);
+//   },
+
+//   // openingHours:openingHours,
+//    openingHours,
+// restaurant.orderDelivery({
+//   time: 22.3,
+//   mainIndex: 2,
+//   starterIndex: 2,
+//   address: '60 feet road',
+// })};
+
+// optional chaining
+
+console.log(restaurant.openingHours?.mon);
+console.log(restaurant.openingHours?.mon?.open);
+console.log(restaurant?.name);
+
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of weekdays) {
+  console.log(day);
+  const open = restaurant.openingHours[day]?.open || 'closed';
+  // const open = restaurant.openingHours[day]?.open ?? 'closed';
+
+  console.log(`on ${day},we are open at ${open}`);
 }
 
-restaurant.orderPasta && restaurant.orderPasta('capsicum', 'spinach');
+console.log(restaurant.order?.(0, 1) ?? 'method does not exist');
 
-// nullish coalescing operator(in this 0 or undefined is also considered as truthy value)
-// restaurant.numGuest = 0;
-const guest2 = restaurant.numGuest ?? 50;
-console.log(guest2);
+const user = [{ name: 'kajal', num: 123455 }];
+console.log(user[0]?.name ?? 'user array is empty');
 
-// logical operator
-const data1 = {
-  name: 'kajal',
-  value: 21,
-};
-const data2 = {
-  name: 'yashvi',
-  DOB: 21,
-};
-// data1.value = data1.value || 10;
-// data2.value ||= 19;
-// console.log(data1, data2);
-
-data2.value = data2.value ?? 10;
-data2.value ??= 10;
-// console.log(data1, data2);
-
-// data1.DOB = data1.DOB && 15;
-data2.DOB = data2.DOB && 17;
-// console.log(data1, data2);
-
-data1.DOB &&= 15;
-console.log(data1, data2);
+if (user.length > 0) console.log(user[0].name);
+else {
+  console.log('user aray is empty');
+}
