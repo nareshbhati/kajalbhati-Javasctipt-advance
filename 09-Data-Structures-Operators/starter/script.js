@@ -305,15 +305,46 @@ restaurant.orderDelivery({
 // }
 
 // for-of (object)
-let properties = Object.keys(openingHours);
-for (let day of properties) {
-  console.log(day);
+// let properties = Object.keys(openingHours);
+// for (const day of properties) {
+//   console.log(day);
+// }
+// const values1 = Object.values(openingHours);
+// for (const value of values1) {
+//   console.log(value);
+// }
+// const entries = Object.entries(openingHours);
+// for (const [key, { open, close }] of entries) {
+//   console.log(`on ${key}, we open at ${open} and close at ${close}`);
+// }
+
+// set
+
+const orderSet = new Set(['kajal', 'naresh', 'yashvi']);
+console.log(orderSet);
+console.log(new Set('kajal'));
+console.log(new Set('kajal').size);
+console.log(orderSet.has('kajal'));
+console.log(orderSet.has('rajal'));
+orderSet.add('yug');
+orderSet.add('bhumi');
+orderSet.delete('yashvi');
+console.log(orderSet);
+// orderSet.clear();
+// in SET we cant retrived value through order
+// i.e.  orderSet[0]
+// set are also iterable so,looping is possible
+
+// array to set
+for (const order of orderSet) {
+  console.log(order);
 }
-const values1 = Object.values(openingHours);
-for (const value of values1) {
-  console.log(value);
-}
-const entries = Object.entries(openingHours);
-for (const [key, { open, close }] of entries) {
-  console.log(`on ${key}, we open at ${open} and close at ${close}`);
-}
+const staff = ['waiter', 'manager', 'waiter', 'receptionist', 'waiter'];
+const uniqueStaff = new Set(staff);
+console.log(uniqueStaff);
+//set to array
+orderSet.add('yug');
+const newArray = [...new Set(staff)];
+console.log(newArray);
+console.log(...newArray);
+console.log(new Set('kajalnareshyashvibhati').size);

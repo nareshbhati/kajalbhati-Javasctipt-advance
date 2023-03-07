@@ -40,26 +40,62 @@ const game = {
   },
 };
 
-const [players1, players2] = game.players;
+// const [players1, players2] = game.players;
 
-const [gk, ...fieldPlayers] = players1;
-// console.log(players1);
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
+// const [gk, ...fieldPlayers] = players1;
+// // console.log(players1);
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
 
-const players1Final = [...players1, 'Thiago', 'Coutinho', 'Peristic'];
+// const players1Final = [...players1, 'Thiago', 'Coutinho', 'Peristic'];
 
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
-console.log(team1, draw, team2);
+// const {
+//   odds: { team1, x= draw, team2 },
+// } = game;
+// console.log(team1, draw, team2);
 
-const printGoals = function (...players) {
-  console.log(players);
-  console.log(`${players.length} goals were scored`);
-};
-// printGoals('Davies', 'Kimmich', 'Muller', 'Lewandowski');
-printGoals(...game.scored);
+// const printGoals = function (...players) {
+//   console.log(players);
+//   console.log(`${players.length} goals were scored`);
+// };
+// // printGoals('Davies', 'Kimmich', 'Muller', 'Lewandowski');
+// printGoals(...game.scored);
 
-team1 < team2 && console.log('Team1 is more likely to win ');
-team1 > team2 && console.log('Team2 is more likely to win ');
+// team1 < team2 && console.log('Team1 is more likely to win ');
+// team1 > team2 && console.log('Team2 is more likely to win ');
+
+// challenge2
+const scorer = [...game.scored];
+console.log(scorer);
+for (const [i, ele] of scorer.entries()) console.log(`Goal ${i + 1}:${ele}`);
+// for (const item of scorer) console.log(item);
+let average = 0;
+for (const value of Object.values(game.odds)) {
+  // console.log(value);
+  // let average = 0;
+  average += value;
+  // console.log(average / odds.length);
+}
+console.log(average / 3);
+
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
+// console.log(team1, draw, team2);
+// console.log(team1, draw, team2);
+for (const [key, value] of Object.entries(game.odds)) {
+  console.log(`odds of victory ${game[key] || 'draw'}:${value}`);
+  // console.log(Object.entries(game.odds));
+}
+
+const scorer2 = {};
+for (const item of game.scored) {
+  // console.log(item);
+  // debugger;
+  if (!scorer2[item]) {
+    scorer2[item] = 1;
+  } else {
+    scorer2[item] += 1;
+  }
+}
+console.log(scorer2);
