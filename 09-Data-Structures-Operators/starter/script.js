@@ -347,4 +347,67 @@ orderSet.add('yug');
 const newArray = [...new Set(staff)];
 console.log(newArray);
 console.log(...newArray);
+// we can get the length of string through set
 console.log(new Set('kajalnareshyashvibhati').size);
+
+// map
+const getMap = new Map();
+getMap.set('name', 'newBombay');
+getMap.set('1', 'bhayandar');
+console.log(getMap.set('2', 'borivali'));
+
+getMap
+  .set('categories', ['chinese', 'italian', 'indian'])
+  .set('open', 10)
+  .set('close', 23)
+  .set(true, 'we are open')
+  .set(false, 'we are closed');
+
+console.log(getMap.get('name'));
+console.log(getMap.get(true));
+
+console.log(getMap.has('close'));
+
+const time = 20;
+console.log(
+  getMap.get(time > getMap.get('open') && time < getMap.get('close'))
+);
+getMap.delete('1');
+console.log(getMap);
+console.log(getMap.size);
+
+const arr = [1, 2];
+getMap.set(arr, 'test');
+// it shows undefined as result,so creat an another variable arr
+console.log(getMap.get(arr));
+getMap.set(document.querySelector('h1', 'Heading'));
+
+// Map Iteration
+const question = new Map([
+  ['question', 'what is your name'],
+  [1, 'kajal'],
+  [2, 'yashvi'],
+  ['correct', 1],
+  [true, 'correct'],
+  [false, 'you are wrong'],
+]);
+console.log(question);
+
+// convert object to map
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// maps are iterable so for loop is also available for map
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key} :${value}`);
+}
+const answer = Number(prompt('your answer please'));
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
+// map to array
+console.log([...question]);
+console.log(question.entries());
+console.log(question.keys());
+console.log(question.values());
