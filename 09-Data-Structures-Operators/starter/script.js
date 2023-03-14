@@ -320,94 +320,179 @@ restaurant.orderDelivery({
 
 // set
 
-const orderSet = new Set(['kajal', 'naresh', 'yashvi']);
-console.log(orderSet);
-console.log(new Set('kajal'));
-console.log(new Set('kajal').size);
-console.log(orderSet.has('kajal'));
-console.log(orderSet.has('rajal'));
-orderSet.add('yug');
-orderSet.add('bhumi');
-orderSet.delete('yashvi');
-console.log(orderSet);
-// orderSet.clear();
-// in SET we cant retrived value through order
-// i.e.  orderSet[0]
-// set are also iterable so,looping is possible
+// const orderSet = new Set(['kajal', 'naresh', 'yashvi']);
+// console.log(orderSet);
+// console.log(new Set('kajal'));
+// console.log(new Set('kajal').size);
+// console.log(orderSet.has('kajal'));
+// console.log(orderSet.has('rajal'));
+// orderSet.add('yug');
+// orderSet.add('bhumi');
+// orderSet.delete('yashvi');
+// console.log(orderSet);
+// // orderSet.clear();
+// // in SET we cant retrived value through order
+// // i.e.  orderSet[0]
+// // set are also iterable so,looping is possible
 
-// array to set
-for (const order of orderSet) {
-  console.log(order);
-}
-const staff = ['waiter', 'manager', 'waiter', 'receptionist', 'waiter'];
-const uniqueStaff = new Set(staff);
-console.log(uniqueStaff);
-//set to array
-orderSet.add('yug');
-const newArray = [...new Set(staff)];
-console.log(newArray);
-console.log(...newArray);
+// // array to set
+// for (const order of orderSet) {
+//   console.log(order);
+// }
+// const staff = ['waiter', 'manager', 'waiter', 'receptionist', 'waiter'];
+// const uniqueStaff = new Set(staff);
+// console.log(uniqueStaff);
+// //set to array
+// orderSet.add('yug');
+// const newArray = [...new Set(staff)];
+// console.log(newArray);
+// console.log(...newArray);
 // we can get the length of string through set
-console.log(new Set('kajalnareshyashvibhati').size);
+// console.log(new Set('kajalnareshyashvibhati').size);
 
-// map
-const getMap = new Map();
-getMap.set('name', 'newBombay');
-getMap.set('1', 'bhayandar');
-console.log(getMap.set('2', 'borivali'));
+// // map
+// const getMap = new Map();
+// getMap.set('name', 'newBombay');
+// getMap.set('1', 'bhayandar');
+// console.log(getMap.set('2', 'borivali'));
 
-getMap
-  .set('categories', ['chinese', 'italian', 'indian'])
-  .set('open', 10)
-  .set('close', 23)
-  .set(true, 'we are open')
-  .set(false, 'we are closed');
+// getMap
+//   .set('categories', ['chinese', 'italian', 'indian'])
+//   .set('open', 10)
+//   .set('close', 23)
+//   .set(true, 'we are open')
+//   .set(false, 'we are closed');
 
-console.log(getMap.get('name'));
-console.log(getMap.get(true));
+// console.log(getMap.get('name'));
+// console.log(getMap.get(true));
 
-console.log(getMap.has('close'));
+// console.log(getMap.has('close'));
 
-const time = 20;
-console.log(
-  getMap.get(time > getMap.get('open') && time < getMap.get('close'))
-);
-getMap.delete('1');
-console.log(getMap);
-console.log(getMap.size);
+// const time = 20;
+// console.log(
+//   getMap.get(time > getMap.get('open') && time < getMap.get('close'))
+// );
+// getMap.delete('1');
+// console.log(getMap);
+// console.log(getMap.size);
 
-const arr = [1, 2];
-getMap.set(arr, 'test');
-// it shows undefined as result,so creat an another variable arr
-console.log(getMap.get(arr));
-getMap.set(document.querySelector('h1', 'Heading'));
+// const arr = [1, 2];
+// getMap.set(arr, 'test');
+// // it shows undefined as result,so creat an another variable arr
+// console.log(getMap.get(arr));
+// getMap.set(document.querySelector('h1', 'Heading'));
 
-// Map Iteration
-const question = new Map([
-  ['question', 'what is your name'],
-  [1, 'kajal'],
-  [2, 'yashvi'],
-  ['correct', 1],
-  [true, 'correct'],
-  [false, 'you are wrong'],
-]);
-console.log(question);
+// // Map Iteration
+// const question = new Map([
+//   ['question', 'what is your name'],
+//   [1, 'kajal'],
+//   [2, 'yashvi'],
+//   ['correct', 1],
+//   [true, 'correct'],
+//   [false, 'you are wrong'],
+// ]);
+// console.log(question);
 
-// convert object to map
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap);
+// // convert object to map
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
 
-// maps are iterable so for loop is also available for map
-for (const [key, value] of question) {
-  if (typeof key === 'number') console.log(`Answer ${key} :${value}`);
-}
-const answer = Number(prompt('your answer please'));
-console.log(answer);
+// // maps are iterable so for loop is also available for map
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') console.log(`Answer ${key} :${value}`);
+// }
+// // const answer = Number(prompt('your answer please'));
+// console.log(answer);
 
-console.log(question.get(question.get('correct') === answer));
+// console.log(question.get(question.get('correct') === answer));
 
-// map to array
-console.log([...question]);
-console.log(question.entries());
-console.log(question.keys());
-console.log(question.values());
+// // map to array
+// console.log([...question]);
+// console.log(question.entries());
+// console.log(question.keys());
+// console.log(question.values());
+
+// string operation
+const bank = 'today is bank holiday';
+const day = 'sunday';
+console.log(bank[0]);
+console.log(bank[5]);
+console.log(day.length);
+console.log('kajal21'.length);
+
+console.log(bank.indexOf('y'));
+console.log(bank.lastIndexOf('y'));
+console.log(bank.indexOf('H'));
+
+// slice method
+console.log(day.slice(0));
+console.log(day.slice(2));
+console.log(bank.slice(5));
+// it doesn't include last index value i.e. [2-0]=2
+console.log(bank.slice(0, 2));
+console.log(bank.slice(0, bank.indexOf(' ')));
+console.log(bank.slice(bank.lastIndexOf(' ')));
+console.log(bank.slice(0, -1));
+
+const check = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('you got middle seat');
+  else console.log('you got another seat');
+};
+check('11B');
+check('11A');
+check('1E');
+
+console.log(new String('kajal'));
+console.log(typeof new String('kajal'));
+
+// case sensitive
+const airline = 'Indian Airline';
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+const passenger = 'kAjAl';
+const passengerLower = passenger.toLowerCase();
+const correctPassenger =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(correctPassenger);
+
+const email = 'kajalborana@gmail.com';
+const logIn = '       KaJalBorana@Gmail.com';
+
+const newLogIn = logIn.toLowerCase();
+console.log(newLogIn);
+// trim
+const newLogIn2 = newLogIn.trim();
+console.log(newLogIn2);
+console.log(email === newLogIn2);
+
+// replace
+const price = '251,70$';
+const priceNew = price.replace(',', '.').replace('$', '&');
+console.log(priceNew);
+
+const announcement = 'all passengers go towards boarding door 21,door 21';
+console.log(announcement.replace('door', 'gate'));
+// replace only replace first occurance in the sentence
+console.log(announcement.replaceAll('door', 'gate'));
+// regular expression
+console.log(announcement.replace(/door/g, 'gate'));
+
+// boolean
+const plane = 'A320neo';
+console.log(plane.includes('320'));
+console.log(plane.startsWith('air'));
+console.log(plane.startsWith('A32'));
+console.log(plane.endsWith('0neo'));
+
+const Baggage = function (items) {
+  const bagCarry = items.toLowerCase();
+  if (bagCarry.includes('knife') || bagCarry.includes('gun')) {
+    console.log('you are not allowed to board');
+  } else console.log('you are allowed');
+};
+Baggage('knife', 'snacks', 'Dottle');
+Baggage('gun', 'snacks', 'boDtle');
+Baggage('rope', 'stick', 'bDttle');
+Baggage('biscuits', 'mobile', 'bottle');
