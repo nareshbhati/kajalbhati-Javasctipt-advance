@@ -496,3 +496,38 @@ Baggage('knife', 'snacks', 'Dottle');
 Baggage('gun', 'snacks', 'boDtle');
 Baggage('rope', 'stick', 'bDttle');
 Baggage('biscuits', 'mobile', 'bottle');
+
+// split()
+console.log('kajal+naresh+bhati'.split('+'));
+console.log('kajal Naresh Yashvi'.split(' '));
+
+const [firstName, lastName] = 'kajal bhati'.split(' ');
+const newName = ['Mrs.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalization = function (name) {
+  const nameArray = name.split(' ');
+  const nameUpper = [];
+  for (const n of nameArray) {
+    nameUpper.push(n[0].toUpperCase() + n.slice(1));
+    // console.log(nameUpper);
+  }
+
+  console.log(nameUpper.join(' '));
+};
+capitalization('kajal and naresh');
+capitalization('kajal,yashvi and naresh');
+capitalization('bhoomi and yug');
+capitalization('yashu and naresh');
+
+// padding
+const message = 'hie! this is my number';
+console.log(message.padStart(28, '*').padEnd(35, '&'));
+
+const creditCard = function (number) {
+  const str = number + ' ';
+  const lastFour = str.slice(-4);
+  console.log(lastFour.padStart(str.length, '*'));
+};
+creditCard(3456952148652112);
+creditCard(3977426552236652);
