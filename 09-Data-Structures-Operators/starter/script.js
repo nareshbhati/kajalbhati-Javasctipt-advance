@@ -1,8 +1,10 @@
 'use strict';
 
 // Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+// const flights = `_Delayed_Departure;fao93766109;txl2133758440;11:25
+//   +_Arrival;bru0943384722;fao93766109;11:45
+//   +_Delayed_Arrival;hel7439299980;fao93766109;12:05
+//   +_Departure;fao93766109;lis2323639855;12:30`;
 
 // Data needed for first part of the section
 // const restaurant = {
@@ -531,3 +533,33 @@ const creditCard = function (number) {
 };
 creditCard(3456952148652112);
 creditCard(3977426552236652);
+
+// repeat
+const note = 'honesty is best policy....';
+console.log((note[0].toUpperCase() + note.slice(1)).repeat(5));
+
+// string methods practice
+const flights = `_Delayed_Departure;fao93766109;txl2133758440;11:25
+  +_Arrival;bru0943384722;fao93766109;11:45
+  +_Delayed_Arrival;hel7439299980;fao93766109;12:05
+  +_Departure;fao93766109;lis2323639855;12:30`;
+
+// const newFlight = flights
+//   .replaceAll('_', ' ')
+//   .replaceAll(';', ' ')
+//   .replaceAll('\n', '')
+//   .split('+');
+// console.log(newFlight);
+// console.log(newFlight.join('\n '));
+const airportCode = str => str.slice(0, 3).toUpperCase();
+const newFlights = flights.split('+');
+for (const item of newFlights) {
+  const [a, b, c, d] = item.split(';');
+  // console.log(a, b, c, d);
+  const output = `${a.startsWith('_Delayed') ? '*' : ''} ${a.replaceAll(
+    '_',
+    ' '
+  )} from ${airportCode(b)} to ${airportCode(c)} (${d.replace(':', 'h')})`;
+  console.log(output.padStart(47));
+}
+// console.log(output);
