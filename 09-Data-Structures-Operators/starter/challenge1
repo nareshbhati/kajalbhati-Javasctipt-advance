@@ -145,10 +145,10 @@ document.querySelector('button').addEventListener('click', function () {
   for (const [index, value] of rows.entries()) {
     const [a, b] = value.toLowerCase().trim().split('_');
     const output = `${a}${b.slice(0, 1).toUpperCase() + b.slice(1)}`.padEnd(
-      20,
+      40,
       ' '
     );
-    console.log(`${output}${'%'.repeat(index + 1)}`);
+    console.log(`${output}${'*'.repeat(index + 1)}`);
     // debugger;
     // console.log(output);
   }

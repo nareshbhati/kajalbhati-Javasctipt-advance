@@ -36,9 +36,9 @@ const checkIn = function (flightNum, passenger) {
   else alert('wrong passenger');
 };
 
-checkIn(flight, passengerDetails);
-// checkIn(passengerDetails);
-console.log(flight, passengerDetails);
+// checkIn(flight, passengerDetails);
+// checkIn(undefined, passengerDetails);
+// console.log(flight, passengerDetails);
 
 // in this when we pass an object to a function it always copy the object
 // if we manupulate the passenger then passengerDetails object also manupulate
@@ -47,6 +47,30 @@ console.log(flight, passengerDetails);
 const newPassport = function (person) {
   person.passport = Math.trunc(Math.random() * 10000000);
 };
-newPassport(passengerDetails);
-checkIn(flight, passengerDetails);
-console.log(passengerDetails);
+// newPassport(passengerDetails);
+// checkIn(flight, passengerDetails);
+// console.log(passengerDetails);
+
+// callback function
+const lowerCase = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...other] = str.split(' ');
+  return [first.toUpperCase(), ...other].join(' ');
+};
+
+console.log(upperFirstWord('honesty is best policy'));
+
+const callback = function (str, fn) {
+  console.log(`original string: ${str}`);
+  console.log(`new transformed string: ${fn(str)}`);
+  console.log(`function calling name: ${fn.name}`);
+};
+
+callback('honesty is best policy', upperFirstWord);
+callback('honesty IS BEST policy', lowerCase);
+
+// callback function also consist of properties like .name etc
+// addEventListener and forEach is a higher order function
