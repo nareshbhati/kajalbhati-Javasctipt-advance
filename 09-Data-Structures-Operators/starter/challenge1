@@ -150,5 +150,6 @@ document.querySelector('button').addEventListener('click', function () {
     );
     console.log(`${output}${'%'.repeat(index + 1)}`);
     // debugger;
+    // console.log(output);
   }
 });

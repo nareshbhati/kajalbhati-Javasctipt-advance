@@ -36,7 +36,7 @@ const checkIn = function (flightNum, passenger) {
   else alert('wrong passenger');
 };
 
-// checkIn(flight, passengerDetails);
+checkIn(flight, passengerDetails);
 // checkIn(passengerDetails);
 console.log(flight, passengerDetails);
 
