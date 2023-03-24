@@ -51,7 +51,7 @@ const newPassport = function (person) {
 // checkIn(flight, passengerDetails);
 // console.log(passengerDetails);
 
-// callback function
+// callback function(function as an arguement)
 const lowerCase = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
@@ -74,3 +74,63 @@ callback('honesty IS BEST policy', lowerCase);
 
 // callback function also consist of properties like .name etc
 // addEventListener and forEach is a higher order function
+
+//132 function Returning function
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+const greeter = greet('hello!');
+greeter('kajal');
+greeter('Naresh');
+greeter('Yashvi');
+
+// another method to call the function
+greet('hello!')('mom');
+
+// function returning function as an arrow function
+const greet2 = greeting => name => console.log(`${greeting} ${name}`);
+
+greet2('hello!')('mom');
+greet2('hello!')('kajal');
+
+// 133 call and apply method
+const airIndia = {
+  airline: 'airIndia',
+  code: 'AI',
+  booking: [],
+  // book:function(){}
+  book(flightNum, name) {
+    console.log(
+      `booked a seat on ${this.airline} flight ${this.code}${flightNum}`
+    );
+
+    this.booking.push({
+      flight: `${this.code}${flightNum}`,
+      name,
+    });
+  },
+  console.log(booking);
+
+};
+airIndia.book(458, 'kajal');
+
+const spiceJet = {
+  airline: 'spiceJet',
+  code: 'SJ',
+  booking: [],
+};
+
+const flightBooking = airIndia.book;
+// does not work
+// flightBooking(589, 'kajal');
+
+// call method points to the object for which function is called
+flightBooking.call(spiceJet, 589, 'kAjal');
+
+// apply method
+const flightData = [785, 'naresh'];
+flightBooking.apply(airIndia, flightData);
+
+flightBooking.call(airIndia, ...flightData);
