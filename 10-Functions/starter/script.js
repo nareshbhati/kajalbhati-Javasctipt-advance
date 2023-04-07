@@ -187,3 +187,61 @@ console.log(add(200));
 })();
 
 // bt nowadays there is no need to use IIFE because code block also donot allow to access data or variable outside the codeblock
+
+// 137 closure
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passenger`);
+  };
+};
+const booker = secureBooking();
+booker();
+booker();
+booker();
+
+console.dir(booker);
+
+// 138 closure example
+
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 12;
+  f = function () {
+    console.log(b * b);
+  };
+};
+g();
+f();
+console.dir(f);
+
+// re-assigning f()
+h();
+f();
+console.dir(f);
+
+// example2
+const boardPassenger = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`we are now boarding all ${n} passengers`);
+    console.log(`there are 3 groups each with ${perGroup} passengers`);
+  }, 1000);
+
+  console.log(`we will start boarding in ${wait} seconds`);
+};
+
+boardPassenger(210, 4);
+boardPassenger(180, 10);
