@@ -71,6 +71,65 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+// array methods(1.slice method)
+
+let arr = ['a', 'b', 'c', 'd', 'e'];
+console.log(arr.slice(1));
+console.log(arr.slice(-2));
+console.log(arr.slice(2));
+console.log(arr.slice(1, 3));
+console.log(arr.slice());
+console.log([...arr]);
+console.log(arr.slice(-1));
+
+// splice method(this method mutate the original array,in this extracted part is deleted from the original array)
+arr.splice(-2);
+console.log(arr);
+
+// REVERSE(also mutate the array)
+arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+console.log(arr2.reverse());
+console.log(arr2);
+
+// CONCAT(it doesn't mutate the array)
+const newArray = arr.concat(arr2);
+console.log(newArray);
+console.log([...arr, ...arr2]);
+
+// JOIN METHOD(It also doesnot mutate array)
+
+console.log(newArray.join('-'));
+
+// 143. 'AT' METHOD
+console.log(arr.at(0));
+console.log(arr[0]);
+console.log(arr.at(-1));
+console.log(arr.slice(arr.length - 1)[0]);
+
+// 144. forEach loop
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+for (const [i, item] of movements.entries()) {
+  if (item > 0) {
+    console.log(`${i + 1} you deposited ${item}`);
+  } else {
+    console.log(`${i + 1} you withdraw ${Math.abs(item)}`);
+  }
+}
+
+console.log('-------FOREACH------');
+movements.forEach(function (item, i, movements) {
+  if (item > 0) {
+    console.log(`${i + 1} you deposited ${item}`);
+  } else {
+    console.log(`${i + 1} you withdraw ${Math.abs(item)}`);
+  }
+});
+// in FOREACH for each element of array  callback function is called.
+// continue and break satement donot work on FOREACH loop
