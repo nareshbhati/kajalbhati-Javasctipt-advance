@@ -133,3 +133,23 @@ movements.forEach(function (item, i, movements) {
 });
 // in FOREACH for each element of array  callback function is called.
 // continue and break satement donot work on FOREACH loop
+
+// 145 foreach with MAPS and SETS
+// map
+const currency = new Map([
+  ['USD', 'united states dollar'],
+  ['EUR', 'euro'],
+  ['GBR', 'pound sterling'],
+]);
+
+currency.forEach(function (value, key, map) {
+  console.log(`${key}:${value}`);
+});
+
+// set
+const currenciesunique = new Set(['USD', 'GBR', 'EUR', 'USD', 'EUR']);
+console.log(currenciesunique);
+// SET doesn't have any key value so we use _ in place of key arguement
+currenciesunique.forEach(function (value, _, set) {
+  console.log(`${value}:${value}`);
+});
