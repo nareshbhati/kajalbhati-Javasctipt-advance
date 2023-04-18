@@ -79,6 +79,31 @@ const displayMovements = function (movements) {
   });
 };
 displayMovements(account1.movements);
+
+// 151 computing username
+
+const user = 'Steven Thomas Williams';
+const userName = user
+  .toLowerCase()
+  .split(' ')
+  .map(name => name[0])
+  .join('');
+console.log(userName);
+
+const createUserName = function (acc) {
+  acc.forEach(function (accsnt) {
+    accsnt.userName = accsnt.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+createUserName(accounts);
+console.log(accounts);
+
+// here we want tomodify the accounts array so we use forEach loop
+
 ////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -171,3 +196,30 @@ console.log(currenciesunique);
 currenciesunique.forEach(function (value, _, set) {
   console.log(`${value}:${value}`);
 });
+
+// map method
+// it is same as forEach looping,in this we have to return the value from
+// call back function and in this original array doesnot mutated
+
+const eurToUsd = 1.1;
+
+const movementsUsd = movements.map(function (mov) {
+  return mov * eurToUsd;
+});
+console.log(movements);
+console.log(movementsUsd);
+
+// conversion using for-of loop
+const movementsUsdFor = [];
+for (const mov of movements) movementsUsdFor.push(mov * eurToUsd);
+console.log(movementsUsdFor);
+
+const movementsDescription = movements.map(
+  (mov, i) =>
+    `movement ${i + 1} : you ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+console.log(movementsDescription);
+
+// 151 computing username
