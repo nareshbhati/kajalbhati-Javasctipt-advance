@@ -102,7 +102,14 @@ const createUserName = function (acc) {
 createUserName(accounts);
 console.log(accounts);
 
-// here we want tomodify the accounts array so we use forEach loop
+// label balance
+const calcPrintBalance = function (movements) {
+  const balances = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balances} EUR`;
+};
+calcPrintBalance(account1.movements);
+
+// here we want to modify the accounts array so we use forEach loop
 
 ////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -222,4 +229,33 @@ const movementsDescription = movements.map(
 );
 console.log(movementsDescription);
 
-// 151 computing username
+// 152 filter method
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(deposits);
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+
+// 153 reduce method(in this first arguement we pass is 'accumulator')
+const balance = movements.reduce(function (acc, mov, i, arr) {
+  return acc + mov;
+}, 0);
+console.log(balance);
+
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
+
+// another example
+// debugger;
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements[0]);
+console.log(max);
