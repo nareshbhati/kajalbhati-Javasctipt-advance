@@ -92,6 +92,8 @@ console.log(userName);
 
 const createUserName = function (acc) {
   acc.forEach(function (accsnt) {
+    // here we want to modify the accounts array so we use forEach loop
+
     accsnt.userName = accsnt.owner
       .toLowerCase()
       .split(' ')
@@ -109,9 +111,31 @@ const calcPrintBalance = function (movements) {
 };
 calcPrintBalance(account1.movements);
 
-// here we want to modify the accounts array so we use forEach loop
+// display summaery
+const calcDisplaySummary = function (movements) {
+  const income = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${income} EUR`;
 
-////////////////////////////////////////////
+  const outcome = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${outcome} EUR`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * 1.2) / 100)
+    .filter((int, i, arr) => {
+      console.log(arr);
+      return int >= 1;
+    })
+    .reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = `${interest} EUR`;
+};
+calcDisplaySummary(account1.movements);
+
+////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
 
@@ -259,3 +283,10 @@ const max = movements.reduce((acc, mov) => {
   else return mov;
 }, movements[0]);
 console.log(max);
+
+// 155 chaining of array methods
+const tatalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * eurToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(tatalDepositsUSD);
